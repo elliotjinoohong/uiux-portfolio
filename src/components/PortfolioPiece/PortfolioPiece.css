@@ -1,0 +1,33 @@
+.portfolio-piece-wrapper {
+    display: flex;
+    width: 600px;
+    box-shadow: rgba(0, 0, 0, 0.25) 1px 4px 6px;
+    border-radius: 20px 20px 20px 20px;
+}
+
+.portfolio-piece-wrapper:hover {
+    transition-duration: 0.2s;
+    transform: translate(0px, -3px);
+    cursor: pointer;
+}
+
+.text-wrapper {
+    width: 40%;
+    border-radius: 0px 20px 20px 0px;
+    /* border-right: 2px solid grey;
+    border-bottom: 2px solid grey;
+    border-top: 2px solid grey; */
+    text-align: left;
+    padding: 10px;
+    margin-left: 7px;
+}
+
+.portfolio-piece-title {
+    font-weight: 600;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.portfolio-piece-blurb {
+    font-size: 1.2rem;
+}

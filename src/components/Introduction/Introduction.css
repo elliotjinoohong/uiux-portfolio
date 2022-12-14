@@ -1,0 +1,14 @@
+.introduction-wrapper {
+    margin-left: 50px;
+}
+
+.introduction-title {
+    font-weight: 700;
+    font-size: 2.3rem;
+    margin-top: 40px;
+}
+
+.introduction-blurb {
+    font-weight: 500;
+    font-size: 1.3rem;
+}

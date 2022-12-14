@@ -1,0 +1,9 @@
+.joy-ui-card-wrapper {
+
+}
+
+.joy-ui-card-wrapper:hover {
+    transition-duration: 0.2s;
+    transform: translate(0px, -3px);
+    cursor: pointer;
+}
