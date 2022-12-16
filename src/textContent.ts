@@ -1,2 +1,2 @@
 export const title = "Wonderful Fruglet: Accessibility within Reach"
-export const introductionBlurb = "hi this is a blurb"
+export const introductionBlurb = "Welcome to my UIUX final portfolio. I'm a UIUX designer passionate about creating functional and accessible digital experiences. I hold the view that accessibility does not need to be boring. Nor does accessibility have to be hard! I hope to optimize the web for accessibility so that all users can express themselves creatively online."

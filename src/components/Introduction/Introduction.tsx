@@ -1,5 +1,7 @@
 import React from 'react';
 import './Introduction.css'
+import { Image } from '@chakra-ui/react'
+import CoolTitle from '../CoolTitle/CoolTitle';
 
 interface IntroductionProps {
     title: string;
@@ -10,11 +12,18 @@ export const Introduction = (props: IntroductionProps) => {
     const { title, blurb } = props
     return (
         <div className="introduction-wrapper">
-            <div className="introduction-title">
+            {/* {CoolTitle()} */}
+            {/* <div className="introduction-title">
                 {title}
-            </div>
+            </div> */}
             <div className="introduction-blurb">
-                {blurb}
+                
+                <div>
+                    Welcome to my UIUX final portfolio!
+                </div>
+                <div style={{marginTop: '30px'}}>
+                    I'm a UIUX designer passionate about creating functional and accessible digital experiences. I hold the view that accessibility does not need to be boring; nor does accessibility have to be hard! I hope to optimize the web for accessibility so that all users can express themselves creatively online.
+                </div>
             </div>
         </div>
     )

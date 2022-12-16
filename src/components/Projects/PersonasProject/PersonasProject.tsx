@@ -4,15 +4,17 @@ import { ExternalLinkIcon } from '@chakra-ui/icons'
 import { PortfolioPiece } from '../../PortfolioPiece'
 import './PersonasProject.css'
 import '../Modal.css'
+import JoyUICard from '../../JoyUICard/JoyUICard';
 
 export const PersonasProject = () => {
     const cardTitle= "Personas and Storyboarding @ CVS"
     const cardBlurb= "Creating personas and storyboarding with CVS's self-checkout kiosks."
     const cardImgSrc= "https://i.imgur.com/fc0GriQ.png"
+    const cardTags = ["Interviews", "Physical"]
     const [isModalOpen, setIsModalOpen] = useState(false)
     return (
         <>
-            <PortfolioPiece title={cardTitle} blurb={cardBlurb} imgSrc={cardImgSrc} setIsModalOpen={setIsModalOpen}/>
+            <JoyUICard title={cardTitle} imgSrc={cardImgSrc} tags={cardTags} setIsModalOpen={setIsModalOpen} />
             <Modal isOpen={isModalOpen} onClose={() => {setIsModalOpen(false)}} size="6xl">
                 <ModalOverlay/>
                 <ModalContent>
@@ -48,46 +50,165 @@ export const PersonasProject = () => {
                     <div className="subheading">
                         The interview
                     </div>
-                    <div className="QA-box">
-                        <div className="Q" style={{display: 'flex'}}>
-                            <div style={{width: '70px', borderRight: 'solid'}}>
-                                Q:
-                            </div>
-                            <div style={{marginLeft: '10px'}}>
-                                Why did you choose to use the self-checkout machine instead of the cashier today?
-                            </div>
-                        </div>
-                        <div className="A" style={{display: 'flex', justifyContent: 'left'}}>
-                            <div style={{borderRight: '1px', width: '20px'}}>
-                                A:
-                            </div>
+                    <Accordion defaultIndex={[0]} allowMultiple style={{marginTop: '10px', marginBottom: '15px'}}>
+                        <AccordionItem style={{borderRadius: '10px', border: 0, marginBottom: '3px'}}>
+                            <h2>
+                            <AccordionButton style={{borderRadius: '10px', border: 0, backgroundColor: '#EEEEEE'}}>
+                                <Box as="span" flex='1' textAlign='left' fontSize='lg'>      
+                                    Q: Why did you choose to use the self-checkout machine instead of the cashier today?
+                                </Box>
+                                <AccordionIcon />
+                            </AccordionButton>
+                            </h2>
+                            <AccordionPanel fontSize='lg' pb={4}>
                             <div className="answers" style={{marginLeft: '30px'}}>
                                 <ul>
                                     <li>All three users cited speed as the primary reason for using the self-checkout kiosk.</li>
                                     <li>One user explained that they prefered not interacting with another human. They particularly liked that no one knew what they were purchasing.</li>                                
                                 </ul>
                             </div>
-                        </div>
-                    </div>
-                    <div className="text-body">
-                        An observation of 3 randomly selected CVS customers who used the self-checkout kiosk was done to build an idea as to how the average person might interact with the interface. After this observation, each individual was interviewed with the following questions:
-                        <ol>
-                            <li className="list-1st-layer">Why did you choose to use the self-checkout machine instead of the cashier today?</li>
-                            <li className="list-1st-layer">Do you always use the self-checkout machines? If so, what makes you keep coming back?</li>
-                            <li className="list-1st-layer">Did you have any trouble navigating through the menus/steps?</li>
-                            <li className="list-1st-layer">Can you describe to me the steps you progressed through to complete your purchase today? (This is to investigate what sort of mental model the user has after having used the machine).</li>
-                            <li className="list-1st-layer">Did you have any items that you didn’t know how to scan?</li>
-                            <li className="list-1st-layer">Were there any hiccups or confusions during the process of using this machine?</li>
-                        </ol>
+                            </AccordionPanel>
+                        </AccordionItem>
+                        <AccordionItem fontSize='lg' style={{borderRadius: '10px', border: 0, marginBottom: '3px'}}>
+                            <h2>
+                            <AccordionButton style={{borderRadius: '10px', border: 0, backgroundColor: '#EEEEEE'}}>
+                                <Box as="span" flex='1' textAlign='left' fontSize='lg'>
+                                    Q: Do you always use the self-checkout machines? If so, what makes you keep coming back?
+                                </Box>
+                                <AccordionIcon />
+                            </AccordionButton>
+                            </h2>
+                            <AccordionPanel pb={4}>
+                                <div className="answers" style={{marginLeft: '30px'}}>
+                                    <ul>
+                                        <li>All three users said that they used the self-checkout machines most of the time.</li>
+                                        <li>Users would only use the cashier if the self-checkout machines had a line.</li>                                
+                                    </ul>
+                                </div>
+                            </AccordionPanel>
+                        </AccordionItem>
+                        <AccordionItem fontSize='lg' style={{borderRadius: '10px', border: 0, marginBottom: '3px'}}>
+                            <h2>
+                            <AccordionButton style={{borderRadius: '10px', border: 0, backgroundColor: '#EEEEEE'}}>
+                                <Box as="span" flex='1' textAlign='left' fontSize='lg'>
+                                    Q: Did you have any trouble navigating through the menus/steps?
+                                </Box>
+                                <AccordionIcon />
+                            </AccordionButton>
+                            </h2>
+                            <AccordionPanel pb={4}>
+                                <div className="answers" style={{marginLeft: '30px'}}>
+                                    <ul>
+                                        <li>One user stated that they were often confused as to which side was the loading and which side was the unloading counter.</li>
+                                        <li>One stated that because they were visually impaired, they appreciated the green light that signalled that the machine was available.</li>                                
+                                    </ul>
+                                </div>
+                            </AccordionPanel>
+                        </AccordionItem>
+                        <AccordionItem fontSize='lg' style={{borderRadius: '10px', border: 0, marginBottom: '3px'}}>
+                            <h2>
+                            <AccordionButton style={{borderRadius: '10px', border: 0, backgroundColor: '#EEEEEE'}}>
+                                <Box as="span" flex='1' textAlign='left' fontSize='lg'>
+                                    Q: Can you describe to me the steps you progressed through to complete your purchase today?
+                                </Box>
+                                <AccordionIcon />
+                            </AccordionButton>
+                            </h2>
+                            <AccordionPanel pb={4}>
+                                <div className="answers" style={{marginLeft: '30px'}}>
+                                    <ul>
+                                        <li>This question was to investigate what sort of mental model the user has after having used the machine.</li>
+                                        <li>All users followed the following steps:
+                                            <ol style={{marginLeft: '20px'}}>
+                                                <li>Place items on lefthand side.</li>
+                                                <li>Start scanning items.</li>
+                                                <li>Scan CVS card.</li>
+                                                <li>Touch screen to pay.</li>
+                                                <li>Pay with credit card.</li>
+                                            </ol>
+                                        </li>    
+                                        <li>One individual accidentally placed their items on the right-hand side causing confusion at first.</li>                    
+                                    </ul>
+                                </div>
+                            </AccordionPanel>
+                        </AccordionItem>
+                        <AccordionItem fontSize='lg' style={{borderRadius: '10px', border: 0, marginBottom: '3px'}}>
+                            <h2>
+                            <AccordionButton style={{borderRadius: '10px', border: 0, backgroundColor: '#EEEEEE'}}>
+                                <Box as="span" flex='1' textAlign='left' fontSize='lg'>
+                                    Q: Did you have any items that you didn’t know how to scan?
+                                </Box>
+                                <AccordionIcon />
+                            </AccordionButton>
+                            </h2>
+                            <AccordionPanel pb={4}>
+                                <div className="answers" style={{marginLeft: '30px'}}>
+                                    <ul>
+                                        <li>All individuals were able to scan all their items.</li>                  
+                                    </ul>
+                                </div>
+                            </AccordionPanel>
+                        </AccordionItem>
+                        <AccordionItem fontSize='lg' style={{borderRadius: '10px', border: 0, marginBottom: '3px'}}>
+                            <h2>
+                            <AccordionButton style={{borderRadius: '10px', border: 0, backgroundColor: '#EEEEEE'}}>
+                                <Box as="span" flex='1' textAlign='left' fontSize='lg'>
+                                    Q: Were there any hiccups or confusions during the process of using this machine?
+                                </Box>
+                                <AccordionIcon />
+                            </AccordionButton>
+                            </h2>
+                            <AccordionPanel pb={4}>
+                                <div className="answers" style={{marginLeft: '30px'}}>
+                                    <ul>
+                                        <li>One person was visually impaired and so they would have liked more visually stunning menu items on the screen.</li>                  
+                                        <li>One user wished that there were more physical labels indicating places such as “bagging area” or “enter coupons”.</li>
+                                        <li>All users mentioned that the scale in the bagging area can be finnicky and sometimes not register a bagged product.</li>
+                                        <li>Users were all confused as to when/how to scan coupons. There is no clear button or actionable nudge for users to know how to use their coupons.</li>
+                                    </ul>
+                                </div>
+                            </AccordionPanel>
+                        </AccordionItem>
+                    </Accordion>
+                    <div className="heading">
+                        Part 4: Personas
                     </div>
                     <div className="subheading">
-                        Summarized Responses
+                        Visiting Vlad
                     </div>
+                    <Image src="https://cs1300-uiux-portfolio.web.app/vlad.png" width="50%" marginLeft="auto" marginRight="auto"/>
                     <div className="text-body">
-                        <ul>
-                            <li className="list-1st-layer">hihihi</li>
-                        </ul>
+                        <div style={{marginTop: '5px', fontWeight: 500}}>
+                        Visiting Vlad is from out of town and is here to grab some snacks to continue his road trip.
+                        </div>
+                        <div style={{marginTop: '5px'}}>
+                        While using CVS’ self-checkout machine Vlad was confused as to where to the bagging area was. He is used to having the bagging area on the right side – CVS stores vary in machine design, and this was a key inconsistency that he felt was awkward as a user.
+                        </div>
+                        <div style={{marginTop: '5px'}}>
+                        Vlad represents the portion of users who are not Brown students and therefore might not frequent this CVS store frequently. Furthermore, he also represents users who don’t go to CVS often and therefore is part of the demographic that would benefit from more physical signage on the interface.
+                        </div>
                     </div>
+                    <div className="subheading">
+                        Student Sarah
+                    </div>
+                    <Image src="https://cs1300-uiux-portfolio.web.app/sarah.png" width='50%' marginLeft="auto" marginRight="auto"/>
+                    <div className="text-body">
+                        <div style={{marginTop: '5px', fontWeight: 500}}>
+                        Student Sarah is a Junior at Brown University studying Computer Science and is comfortable with technology.
+                        </div>
+                        <div style={{marginTop: '5px'}}>
+                        She lives in Mo-Champ and therefore frequents this specific CVS store often. Sarah is a power user of CVS and therefore wants to check out as fast as possible. She also wants to know ahead of time as she is scanning items if she could potentially save money on them.                        </div>
+                        <div style={{marginTop: '5px'}}>
+                        Sarah represents the large number of Brown Students who frequent this exact CVS store often. She also represents a user who uses coupons and her ExtraCare card often to save a buck.
+                        </div>
+                    </div>
+                    <div className="heading">
+                        Part 5: Storyboarding
+                    </div>
+                    <div className="subheading">
+                        A storyboard for Visiting Vlad
+                    </div>
+                    <Image src="https://cs1300-uiux-portfolio.web.app/story.png" width='90%' marginLeft="auto" marginRight="auto" marginTop="10px"/>
                     <hr style={{marginTop: '30px', marginBottom: '10px'}}></hr>
                     <Link href="https://cs1300-uiux-portfolio.web.app/" isExternal style={{marginLeft: '10px'}}>
                         More on Personas & Storyboarding <ExternalLinkIcon mx='2px' />

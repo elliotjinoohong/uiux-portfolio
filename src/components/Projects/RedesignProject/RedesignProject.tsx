@@ -1,25 +1,23 @@
 import React, { useState } from 'react';
 import { Accordion, AccordionButton, AccordionIcon, AccordionItem, AccordionPanel, Box, Button, Image, Link, Modal, ModalBody, ModalCloseButton, ModalContent, ModalFooter, ModalHeader, ModalOverlay, Tab, TabList, TabPanel, TabPanels, Tabs } from '@chakra-ui/react'
 import { ExternalLinkIcon } from '@chakra-ui/icons'
-import { PortfolioPiece } from '../../PortfolioPiece'
 import './RedesignProject.css'
 import '../Modal.css'
 import JoyUICard from '../../JoyUICard/JoyUICard';
 
 export const RedesignProject = () => {
-    const cardTitle= "Redesign RITTA Club Website"
+    const cardTitle= "Redesigning RITTA Club Website"
     const cardBlurb= "Redesigning Rhode Island's largest table tennis club's website"
     const cardImgSrc= "https://i.imgur.com/8OYXLB6.png"
-    const tags: string[] = []
+    const tags: string[] = ["Redesign", "Prototyping"]
     const [isModalOpen, setIsModalOpen] = useState(false)
     return (
         <>
-            <PortfolioPiece title={cardTitle} blurb={cardBlurb} imgSrc={cardImgSrc} setIsModalOpen={setIsModalOpen}/>
             <JoyUICard title={cardTitle} imgSrc={cardImgSrc} tags={tags} setIsModalOpen={setIsModalOpen}/>
             <Modal isOpen={isModalOpen} onClose={() => {setIsModalOpen(false)}} size="6xl">
                 <ModalOverlay/>
-                <ModalContent>
-                <ModalHeader style={{fontSize: "2.3rem"}} className="modal-header">Redesign RITTA Club Website</ModalHeader>
+                <ModalContent backgroundColor="#696773" color="white">
+                <ModalHeader style={{fontSize: "2.3rem"}} className="modal-header">Redesigning RITTA Club Website</ModalHeader>
                 <ModalCloseButton/>
                 <ModalBody style={{paddingLeft: '50px', paddingRight: '50px', paddingBottom: '20px'}}>
                     <div className="heading" style={{marginTop: '5px'}}>
@@ -28,10 +26,10 @@ export const RedesignProject = () => {
                     <div className="text-body">
                         Table tennis is a niche sport here on the east coast. In Rhode Island, it’s an underserved sport with only a handful of clubs and facilities for players to practice and play. Rhode Island Table Tennis Association (RITTA) is the largest table tennis club in Rhode Island and serves more than 50 active members. Since it is run by community members, their website is outdated, haphazard and does not follow key accessibility design principles. My goal here was to serve the table tennis community here in Rhode Island by streamlining their website and making it more accessible. 
                     </div>
-                    <Tabs variant='soft-rounded' colorScheme='green' style={{marginTop: '15px'}}>
+                    <Tabs variant='soft-rounded' colorScheme='teal' style={{marginTop: '15px'}}>
                         <TabList>
-                            <Tab>Previous Website</Tab>
-                            <Tab>Redesigned Website</Tab>
+                            <Tab color="white">Previous Website</Tab>
+                            <Tab color="white">Redesigned Website</Tab>
                         </TabList>
                         <TabPanels>
                             <TabPanel>
@@ -50,34 +48,112 @@ export const RedesignProject = () => {
                     </div>
                     <div className="text-body">
                         An analysis using Jakob Nielsen’s 10 general principles for interaction design was conducted.
-                        <ol>
-                            <li className="list-1st-layer">Visibility of system status:</li>
-                                <ul className="list-2nd-layer">
-                                    <li>There is no indication that this is the home page.</li>
-                                </ul>
-                            <li className="list-1st-layer">Error prevention:</li>
-                                <ul>
-                                    <li className="list-2nd-layer">RITTA has a cash only policy but there is no mention of this on their website. Customers could arrive with no cash prepared and be turned away.</li>
-                                </ul>
-                            <li className="list-1st-layer">Consistency & Standards:</li>
-                                <ul>
-                                    <li className="list-2nd-layer">The ‘Schedule Coaching’ and ‘Groups and Parties’ icons seem to be clickable when they in fact are not.</li>
-                                    <li className="list-2nd-layer">Due to duplication of information, open hours in the header and in the ‘Current Hours’ section contradict one another.</li>
-                                </ul>
-                            <li className="list-1st-layer">Aesthetic and minimalist design:</li>
-                                <ul>
-                                    <li className="list-2nd-layer">There is some duplication of information in the ‘Common Answers’ and ‘Current Hours’ sections.</li>
-                                    <li className="list-2nd-layer">Other duplicate information is the location noted in the header but then also linked in the navigation bar. Having two methods of viewing the location of the club makes the user confused as to which source of information is correct.</li>
-                                </ul>
-                            <li className="list-1st-layer">Memorability:</li>
-                                <ul>
-                                    <li className="list-2nd-layer">Important text is very small and unstructured. Therefore, not memorable.</li>
-                                </ul>
-                            <li className="list-1st-layer">Responsiveness:</li>
-                                <ul>
-                                    <li className="list-2nd-layer">The entire website is not responsive for mobile viewing at all.</li>
-                                </ul>
-                        </ol>
+                        <Accordion defaultIndex={[0]} allowMultiple style={{marginTop: '10px', marginBottom: '15px'}}>
+                            <AccordionItem style={{borderRadius: '10px', border: 0, marginBottom: '3px'}}>
+                                <h2>
+                                <AccordionButton style={{borderRadius: '10px', border: 0, backgroundColor: '#B2F5EA', color: '#275E61', fontWeight: '600'}}>
+                                    <Box as="span" flex='1' textAlign='left' fontSize='lg'>      
+                                        Visibility of system status:
+                                    </Box>
+                                    <AccordionIcon />
+                                </AccordionButton>
+                                </h2>
+                                <AccordionPanel fontSize='lg' pb={4}>
+                                <div className="answers" style={{marginLeft: '30px'}}>
+                                    <ul>
+                                        <li>There is no indication that this is the home page.</li>
+                                    </ul>
+                                </div>
+                                </AccordionPanel>
+                            </AccordionItem>
+                            <AccordionItem fontSize='lg' style={{borderRadius: '10px', border: 0, marginBottom: '3px'}}>
+                                <h2>
+                                <AccordionButton style={{borderRadius: '10px', border: 0, backgroundColor: '#B2F5EA', color: '#275E61', fontWeight: '600'}}>
+                                    <Box as="span" flex='1' textAlign='left' fontSize='lg'>
+                                        Error prevention:
+                                    </Box>
+                                    <AccordionIcon />
+                                </AccordionButton>
+                                </h2>
+                                <AccordionPanel pb={4}>
+                                    <div className="answers" style={{marginLeft: '30px'}}>
+                                        <ul>
+                                            <li>RITTA has a cash only policy but there is no mention of this on their website. Customers could arrive with no cash prepared and be turned away.</li>                                
+                                        </ul>
+                                    </div>
+                                </AccordionPanel>
+                            </AccordionItem>
+                            <AccordionItem fontSize='lg' style={{borderRadius: '10px', border: 0, marginBottom: '3px'}}>
+                                <h2>
+                                <AccordionButton style={{borderRadius: '10px', border: 0, backgroundColor: '#B2F5EA', color: '#275E61', fontWeight: '600'}}>
+                                    <Box as="span" flex='1' textAlign='left' fontSize='lg'>
+                                        Consistency & Standards:
+                                    </Box>
+                                    <AccordionIcon />
+                                </AccordionButton>
+                                </h2>
+                                <AccordionPanel pb={4}>
+                                    <div className="answers" style={{marginLeft: '30px'}}>
+                                        <ul>
+                                            <li>The ‘Schedule Coaching’ and ‘Groups and Parties’ icons seem to be clickable when they in fact are not.</li>
+                                            <li>Due to duplication of information, open hours in the header and in the ‘Current Hours’ section contradict one another.</li>                                
+                                        </ul>
+                                    </div>
+                                </AccordionPanel>
+                            </AccordionItem>
+                            <AccordionItem fontSize='lg' style={{borderRadius: '10px', border: 0, marginBottom: '3px'}}>
+                                <h2>
+                                <AccordionButton style={{borderRadius: '10px', border: 0, backgroundColor: '#B2F5EA', color: '#275E61', fontWeight: '600'}}>
+                                    <Box as="span" flex='1' textAlign='left' fontSize='lg'>
+                                        Aesthetic and minimalist design:
+                                    </Box>
+                                    <AccordionIcon />
+                                </AccordionButton>
+                                </h2>
+                                <AccordionPanel pb={4}>
+                                    <div className="answers" style={{marginLeft: '30px'}}>
+                                        <ul>
+                                            <li>There is some duplication of information in the ‘Common Answers’ and ‘Current Hours’ sections.</li>    
+                                            <li>Other duplicate information is the location noted in the header but then also linked in the navigation bar. Having two methods of viewing the location of the club makes the user confused as to which source of information is correct.</li>                    
+                                        </ul>
+                                    </div>
+                                </AccordionPanel>
+                            </AccordionItem>
+                            <AccordionItem fontSize='lg' style={{borderRadius: '10px', border: 0, marginBottom: '3px'}}>
+                                <h2>
+                                <AccordionButton style={{borderRadius: '10px', border: 0, backgroundColor: '#B2F5EA', color: '#275E61', fontWeight: '600'}}>
+                                    <Box as="span" flex='1' textAlign='left' fontSize='lg'>
+                                        Memorability:
+                                    </Box>
+                                    <AccordionIcon />
+                                </AccordionButton>
+                                </h2>
+                                <AccordionPanel pb={4}>
+                                    <div className="answers" style={{marginLeft: '30px'}}>
+                                        <ul>
+                                            <li>Important text is very small and unstructured. Therefore, not memorable.</li>                  
+                                        </ul>
+                                    </div>
+                                </AccordionPanel>
+                            </AccordionItem>
+                            <AccordionItem fontSize='lg' style={{borderRadius: '10px', border: 0, marginBottom: '3px'}}>
+                                <h2>
+                                <AccordionButton style={{borderRadius: '10px', border: 0, backgroundColor: '#B2F5EA', color: '#275E61', fontWeight: '600'}}>
+                                    <Box as="span" flex='1' textAlign='left' fontSize='lg'>
+                                        Responsiveness:
+                                    </Box>
+                                    <AccordionIcon />
+                                </AccordionButton>
+                                </h2>
+                                <AccordionPanel pb={4}>
+                                    <div className="answers" style={{marginLeft: '30px'}}>
+                                        <ul>
+                                            <li>The entire website is not responsive for mobile viewing at all.</li>
+                                        </ul>
+                                    </div>
+                                </AccordionPanel>
+                            </AccordionItem>
+                        </Accordion>
                     </div>
                     <div className="subheading">
                         Accessibility
@@ -98,18 +174,18 @@ export const RedesignProject = () => {
                     </div>
                     <Accordion allowToggle style={{marginTop: '10px', marginBottom: '15px'}}>
                         <AccordionItem style={{borderRadius: '30px', border: 0}}>
-                            <AccordionButton style={{borderRadius: '30px', border: 0, backgroundColor: '#C6F6D5', color: '#276749'}}>
+                            <AccordionButton style={{borderRadius: '30px', border: 0, backgroundColor: '#B2F5EA', color: '#276749'}}>
                                 <Box as="span" flex='1' textAlign='left'>
                                 <div style={{fontWeight: '600'}}>Low-Fi Prototypes</div>
                                 </Box>
                                 <AccordionIcon />
                             </AccordionButton>
                             <AccordionPanel pb={4}>
-                                <Tabs variant='soft-rounded' colorScheme='green' style={{marginTop: '15px'}}>
+                                <Tabs variant='soft-rounded' colorScheme='teal' style={{marginTop: '15px'}}>
                                     <TabList>
-                                        <Tab>Desktop</Tab>
-                                        <Tab>Mobile</Tab>
-                                        <Tab>Tablet</Tab>
+                                        <Tab color="white">Desktop</Tab>
+                                        <Tab color="white">Mobile</Tab>
+                                        <Tab color="white">Tablet</Tab>
                                     </TabList>
                                     <TabPanels>
                                         <TabPanel>

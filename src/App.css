@@ -1,5 +1,5 @@
 .App {
-  font-family: 'Public Sans', sans-serif;
+  font-family: 'Inter', sans-serif;
 }
 
 .App-logo {
@@ -41,8 +41,19 @@
   margin-top: 50px;
   justify-content: left;
   display: grid;
-  grid-template-columns: 600px 600px;
+  grid-template-columns: 500px 500px;
   grid-column-gap: 20px;
   grid-row-gap: 20px;
-  margin-left: 50px;
+  /* margin-left: 50px; */
+  margin-right: 50px;
+}
+
+.bottom-right {
+  position: fixed;
+  right: 0px; bottom: 0px;
+  width: 285px;
+  height:50px;
+  padding: 5px;
+  font-weight: 600;
+  font-size: 1.5rem;
 }

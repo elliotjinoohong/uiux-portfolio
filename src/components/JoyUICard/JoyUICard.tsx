@@ -14,6 +14,13 @@ interface JoyUICardProps {
 
 export default function JoyUICard(props: JoyUICardProps) {
     const { imgSrc, title, tags, setIsModalOpen } = props
+    const renderTags = () => {
+      return tags.map(tag => 
+        <div style={{border: 'solid 2px #B9B9C6', paddingLeft: '6px', paddingRight: '6px', marginRight: '10px', borderRadius: '8px'}}>
+          {tag}
+        </div>
+      )
+    }
   return (
     <Card sx={{ minHeight: '280px', width: 500 }} className="joy-ui-card-wrapper" onClick={() => setIsModalOpen(true)}>
       <CardCover>
@@ -34,9 +41,10 @@ export default function JoyUICard(props: JoyUICardProps) {
             {title}
         </Typography>
         <Typography
+          style={{display: 'flex'}}
           textColor="neutral.300"
         >
-          Redesign, Responsiveness
+          {renderTags()}
         </Typography>
       </CardContent>
     </Card>
