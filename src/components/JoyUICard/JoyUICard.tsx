@@ -22,7 +22,7 @@ export default function JoyUICard(props: JoyUICardProps) {
       )
     }
   return (
-    <Card sx={{ minHeight: '280px', width: 500 }} className="joy-ui-card-wrapper" onClick={() => setIsModalOpen(true)}>
+    <Card sx={{ minHeight: '230px', width: 400 }} className="joy-ui-card-wrapper" onClick={() => setIsModalOpen(true)}>
       <CardCover>
         <img
           src={imgSrc}

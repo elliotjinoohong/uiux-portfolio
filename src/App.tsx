@@ -16,7 +16,7 @@ function App() {
       <ChakraProvider>
         <div className="App">
           <div style={{display: 'flex'}}>
-          <div style={{marginLeft: '50px', marginRight: '30px', width: '40%', marginTop: '-30px'}}>
+          <div style={{paddingLeft: '50px', paddingRight: '30px', width: '40%', marginTop: '-30px'}}>
           {CoolTitle()} 
           </div>
           <div className="portfolio-pieces" >

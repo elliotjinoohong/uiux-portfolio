@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Accordion, AccordionButton, AccordionIcon, AccordionItem, AccordionPanel, Box, Button, Image, Link, Modal, ModalBody, ModalCloseButton, ModalContent, ModalFooter, ModalHeader, ModalOverlay, Tab, TabList, TabPanel, TabPanels, Tabs } from '@chakra-ui/react'
+import { Accordion, AccordionButton, AccordionIcon, AccordionItem, AccordionPanel, Box, Image, Link, Modal, ModalBody, ModalCloseButton, ModalContent, ModalFooter, ModalHeader, ModalOverlay, Tab, TabList, TabPanel, TabPanels, Tabs } from '@chakra-ui/react'
 import { ExternalLinkIcon } from '@chakra-ui/icons'
 import './RedesignProject.css'
 import '../Modal.css'
@@ -7,7 +7,6 @@ import JoyUICard from '../../JoyUICard/JoyUICard';
 
 export const RedesignProject = () => {
     const cardTitle= "Redesigning RITTA Club Website"
-    const cardBlurb= "Redesigning Rhode Island's largest table tennis club's website"
     const cardImgSrc= "https://i.imgur.com/8OYXLB6.png"
     const tags: string[] = ["Redesign", "Prototyping"]
     const [isModalOpen, setIsModalOpen] = useState(false)

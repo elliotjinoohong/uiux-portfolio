@@ -10,10 +10,11 @@
 
 .introduction-blurb {
     font-weight: 500;
-    font-size: 2rem;
+    font-size: 1.5rem;
     margin-top: 50px;
     color: #164473;
     font-weight: 600;
+    margin-right: 40px;
     /* margin-top: auto; 
     margin-bottom: auto; */
 }

@@ -1,7 +1,5 @@
 import React from 'react';
 import './Introduction.css'
-import { Image } from '@chakra-ui/react'
-import CoolTitle from '../CoolTitle/CoolTitle';
 
 interface IntroductionProps {
     title: string;
@@ -9,7 +7,6 @@ interface IntroductionProps {
 }
 
 export const Introduction = (props: IntroductionProps) => {
-    const { title, blurb } = props
     return (
         <div className="introduction-wrapper">
             {/* {CoolTitle()} */}

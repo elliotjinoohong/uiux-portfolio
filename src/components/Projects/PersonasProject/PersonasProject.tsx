@@ -1,14 +1,12 @@
 import React, { useState } from 'react';
-import { Accordion, AccordionButton, AccordionIcon, AccordionItem, AccordionPanel, Box, Button, Image, Link, Modal, ModalBody, ModalCloseButton, ModalContent, ModalFooter, ModalHeader, ModalOverlay, Tab, TabList, TabPanel, TabPanels, Tabs } from '@chakra-ui/react'
+import { Accordion, AccordionButton, AccordionIcon, AccordionItem, AccordionPanel, Box, Image, Link, Modal, ModalBody, ModalCloseButton, ModalContent, ModalFooter, ModalHeader, ModalOverlay } from '@chakra-ui/react'
 import { ExternalLinkIcon } from '@chakra-ui/icons'
-import { PortfolioPiece } from '../../PortfolioPiece'
 import './PersonasProject.css'
 import '../Modal.css'
 import JoyUICard from '../../JoyUICard/JoyUICard';
 
 export const PersonasProject = () => {
     const cardTitle= "Personas and Storyboarding @ CVS"
-    const cardBlurb= "Creating personas and storyboarding with CVS's self-checkout kiosks."
     const cardImgSrc= "https://i.imgur.com/fc0GriQ.png"
     const cardTags = ["Interviews", "Physical"]
     const [isModalOpen, setIsModalOpen] = useState(false)

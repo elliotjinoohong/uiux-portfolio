@@ -1,7 +1,7 @@
+/* eslint-disable */
 import React, { useState } from 'react';
-import { Accordion, AccordionButton, AccordionIcon, AccordionItem, AccordionPanel, Box, Button, Card, CardBody, CardHeader, Heading, Image, Link, Modal, ModalBody, ModalCloseButton, ModalContent, ModalFooter, ModalHeader, ModalOverlay, Stack, StackDivider, Tab, TabList, TabPanel, TabPanels, Tabs } from '@chakra-ui/react'
+import { Box, Card, CardBody, CardHeader, Heading, Image, Link, Modal, ModalBody, ModalCloseButton, ModalContent, ModalFooter, ModalHeader, ModalOverlay, Stack, StackDivider } from '@chakra-ui/react'
 import { ExternalLinkIcon } from '@chakra-ui/icons'
-import { PortfolioPiece } from '../../PortfolioPiece'
 import './IterativeProject.css'
 import '../Modal.css'
 import JoyUICard from '../../JoyUICard/JoyUICard';
@@ -66,7 +66,7 @@ export const IterativeProject = () => {
                         Below is the first iteration of our high-fidelity Figma mockup. We created the 3 main screens of Kopa: (renter) signup, browsing rentals, and finding roommates.
                     </div>
                     <div className="image">
-                        <iframe style={{ border: "1px solid rgba(0, 0, 0, 0.1)" }} width="100%" height="450"
+                        <iframe title="figma" style={{ border: "1px solid rgba(0, 0, 0, 0.1)" }} width="100%" height="450"
                             src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2FIj4khB3jnSR3dyKooob8Ew%2FIterative-Design-Hi-Fi%3Fnode-id%3D0%253A1%26t%3DYtRypmPyag1hTobZ-1"
                             allowFullScreen />
                     </div>
@@ -237,13 +237,7 @@ export const IterativeProject = () => {
                             One user noted that the writing was a bit small. This is a valid accessibility issue we would address if/when building out the actual website.
                         </div>
                         <div className="heading">
-                            Part 8: Accessibility
-                        </div>
-                        <div className="text-body">
-                            SLADKFASKLDFAL;JG;LSADKJFKL;SJFK;LASJFL;ASKLFSAJDLKF;JASKL;FJLASDFLASDJLF
-                        </div>
-                        <div className="heading">
-                            Part 9: Final Words
+                            Part 8: Final Words
                         </div>
                         <div className="text-body">
                             Overall, we really enjoyed having to work together to iteratively design a website around a startup idea. Since we all had summer internships in cities outside of Providence, we definitely resonated with the pain point Kopa's concept of combining short-term rentals with finding roommates addresses and hope the founders might find our designs helpful.
